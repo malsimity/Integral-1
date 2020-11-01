@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace Integral.Classes
 {
-    class RectangleCalculator : ICalculator
+    public class RectangleCalculator : ICalculator
     {
         public double Calculate(double a, double b, int n, Func<double, double> f)
         {
+            if (n <= 0)
+            {
+                Exception ex = new ArgumentException("Некорректное значение разбиений");
+                throw ex;
+            }
             double h = (b - a) / n;
             double s = 0;
             a += h / 2;//Средние прямоугольники

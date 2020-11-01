@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Integral.Classes
 {
-    interface ICalculator
+    public interface ICalculator
     {
         double Calculate(double a, double b, int n, Func<double, double> f);
 
