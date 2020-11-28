@@ -11,14 +11,14 @@ namespace Tests
         [TestMethod]
         public void Integral_Rectangle_XX_0_10_Correct()
         {
-            //arrange
+            //arrange подготовить
             double expected = 333.333;
             double a = 0;
             double b = 10;
             int n = 10000;
             ICalculator calcul = new RectangleCalculator();
 
-            //act
+            //act действие
             double actual = calcul.Calculate(a, b, n, x => x * x);
 
             //assert

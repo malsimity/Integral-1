@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this._tbMAX = new System.Windows.Forms.TextBox();
             this._tbMIN = new System.Windows.Forms.TextBox();
@@ -38,9 +39,10 @@
             this._nudN = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this._btCalculate = new System.Windows.Forms.Button();
-            this._cbmMetod = new System.Windows.Forms.ComboBox();
+            this.standart = new System.Windows.Forms.ComboBox();
             this._rtbResult = new System.Windows.Forms.RichTextBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.paralel = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this._nudN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
@@ -128,18 +130,18 @@
             this._btCalculate.UseVisualStyleBackColor = true;
             this._btCalculate.Click += new System.EventHandler(this._btCalculate_Click);
             // 
-            // _cbmMetod
+            // standart
             // 
-            this._cbmMetod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this._cbmMetod.FormattingEnabled = true;
-            this._cbmMetod.Items.AddRange(new object[] {
+            this.standart.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.standart.FormattingEnabled = true;
+            this.standart.Items.AddRange(new object[] {
             "Метод трапеции",
             "Метод прямоугольника"});
-            this._cbmMetod.Location = new System.Drawing.Point(238, 34);
-            this._cbmMetod.Margin = new System.Windows.Forms.Padding(4);
-            this._cbmMetod.Name = "_cbmMetod";
-            this._cbmMetod.Size = new System.Drawing.Size(160, 24);
-            this._cbmMetod.TabIndex = 7;
+            this.standart.Location = new System.Drawing.Point(238, 34);
+            this.standart.Margin = new System.Windows.Forms.Padding(4);
+            this.standart.Name = "standart";
+            this.standart.Size = new System.Drawing.Size(160, 24);
+            this.standart.TabIndex = 7;
             // 
             // _rtbResult
             // 
@@ -153,29 +155,49 @@
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(431, 34);
             this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Color = System.Drawing.Color.Lime;
             series2.Legend = "Legend1";
-            series2.Name = "Series1";
+            series2.Name = "Series2";
+            this.chart1.Series.Add(series1);
             this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(610, 438);
             this.chart1.TabIndex = 9;
             this.chart1.Text = "chart1";
+            // 
+            // paralel
+            // 
+            this.paralel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.paralel.FormattingEnabled = true;
+            this.paralel.Items.AddRange(new object[] {
+            "Обычное",
+            "Паралельное"});
+            this.paralel.Location = new System.Drawing.Point(224, 179);
+            this.paralel.Margin = new System.Windows.Forms.Padding(4);
+            this.paralel.Name = "paralel";
+            this.paralel.Size = new System.Drawing.Size(160, 24);
+            this.paralel.TabIndex = 10;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.paralel);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this._rtbResult);
-            this.Controls.Add(this._cbmMetod);
+            this.Controls.Add(this.standart);
             this.Controls.Add(this._btCalculate);
             this.Controls.Add(this.label3);
             this.Controls.Add(this._nudN);
@@ -202,9 +224,10 @@
         private System.Windows.Forms.NumericUpDown _nudN;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button _btCalculate;
-        private System.Windows.Forms.ComboBox _cbmMetod;
+        private System.Windows.Forms.ComboBox standart;
         private System.Windows.Forms.RichTextBox _rtbResult;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.ComboBox paralel;
     }
 }
 

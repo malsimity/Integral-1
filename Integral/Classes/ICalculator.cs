@@ -9,6 +9,7 @@ namespace Integral.Classes
     public interface ICalculator
     {
         double Calculate(double a, double b, int n, Func<double, double> f);
+        double CalculateParalel(double a, double b, int n, Func<double, double> f);
 
     }
 }
