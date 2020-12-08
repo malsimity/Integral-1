@@ -94,5 +94,21 @@ namespace Tests
             Assert.AreEqual(expected, actual, 0.001);
         }
 
+        [TestMethod]
+        public void Integral_Rectangle_XXx_0_10_Correct()
+        {
+            //arrange подготовить
+            double expected = 2500;
+            double a = 0;
+            double b = 10;
+            int n = 10000;
+            ICalculator calcul = new RectangleCalculator();
+
+            //act действие
+            double actual = calcul.Calculate(a, b, n, x => x * x * x);
+
+            //assert
+            Assert.AreEqual(expected, actual, 0.001);
+        }
     }
 }
